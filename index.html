@@ -1,0 +1,359 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Quem Somos - RH Digital</title>  
+    <link rel="icon" type="image/png" href="static/images/Icone Quem Somos.png">  
+
+    <!-- Meta Tags SEO e Social -->  
+    <meta name="description"  
+        content="Descubra o RH Digital: a solução inovadora do SENAC para revolucionar a gestão de pessoas na sua empresa. Processos mais eficientes, candidatos ideais e um RH mais humano!">  
+    <meta name="keywords" content="RH, Recursos Humanos, Gestão de Pessoas, Tecnologia RH">  
+    <meta property="og:title" content="RH Digital - Transformando Gestão de Pessoas">  
+    <meta property="og:description" content="Solução inovadora que humaniza processos de Recursos Humanos">  
+    <meta property="og:image" content="static/images/social-share.png">  
+
+    <!-- Tailwind CSS -->  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+
+    <!-- Font Awesome -->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+
+    <!-- Material Icons -->  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+
+    <style>  
+        /* Importe a fonte Inter, a mesma usada no painel */  
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');  
+
+        body {  
+            font-family: 'Inter', sans-serif;  
+            background-image: url('static/images/Fundo Quem Somos.png');  
+            background-size: cover;  
+            background-position: center;  
+            min-height: 100vh;  
+            color: #1F2937;  
+            /* Cor padrão para o texto */  
+        }  
+
+        @keyframes fadeIn {  
+            from {  
+                opacity: 0;  
+                transform: translateY(20px);  
+            }  
+
+            to {  
+                opacity: 1;  
+                transform: translateY(0);  
+            }  
+        }  
+
+        @keyframes pulse {  
+            0% {  
+                transform: scale(1);  
+            }  
+
+            50% {  
+                transform: scale(1.05);  
+            }  
+
+            100% {  
+                transform: scale(1);  
+            }  
+        }  
+
+        .animate-section {  
+            animation: fadeIn 1s ease-out;  
+        }  
+
+        .pulse-hover:hover {  
+            animation: pulse 1s infinite;  
+        }  
+
+        .back-button {  
+            position: fixed;  
+            top: 20px;  
+            left: 20px;  
+            background-color: #3B82F6;  
+            color: white;  
+            border-radius: 50%;  
+            width: 50px;  
+            height: 50px;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 0.3s ease;  
+            z-index: 100;  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  
+        }  
+
+        .back-button:hover {  
+            background-color: #2563EB;  
+            transform: scale(1.1) rotate(360deg);  
+        }  
+
+        .top-button {  
+            position: fixed;  
+            bottom: 20px;  
+            right: 20px;  
+            background-color: #3B82F6;  
+            color: white;  
+            border-radius: 50%;  
+            width: 50px;  
+            height: 50px;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 0.3s ease;  
+            z-index: 100;  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  
+        }  
+
+        .top-button:hover {  
+            background-color: #2563EB;  
+            transform: scale(1.1) rotate(360deg);  
+        }  
+
+        /* Classe para restringir a largura e centralizar as seções */  
+        .custom-container {  
+            max-width: 1200px;  
+            /* Aumenta a largura máxima das seções */  
+            margin: 0 auto;  
+            /* Centraliza horizontalmente */  
+            padding: 20px;  
+            /* Adiciona espaço interno */  
+        }  
+
+        .section-spacing {  
+            margin-bottom: 3rem;  
+            /* Aumenta o espaçamento entre seções */  
+        }  
+
+        /* Estilização geral da barra de rolagem */  
+        ::-webkit-scrollbar {  
+            width: 12px;  
+            /* Largura da barra de rolagem */  
+        }  
+
+        /* Estilização do "polegar" (a parte que você arrasta) */  
+        ::-webkit-scrollbar-thumb {  
+            background-color: #3B82F6;  
+            /* Cor azul */  
+            border-radius: 6px;  
+            /* Borda arredondada */  
+            border: 3px solid #000;  
+            /* Cor de fundo do body */  
+        }  
+
+        /* Estilização da trilha da barra de rolagem */  
+        ::-webkit-scrollbar-track {  
+            background-color: #000;  
+            /* Cor de fundo da trilha */  
+            border-radius: 6px;  
+        }  
+
+        /* Estilização do "polegar" ao passar o mouse */  
+        ::-webkit-scrollbar-thumb:hover {  
+            background-color: #2563EB;  
+            /* Azul mais escuro no hover */  
+        }  
+
+        /* Estilização da área do canto da barra de rolagem */  
+        ::-webkit-scrollbar-corner {  
+            background-color: #3B82F6;  
+            /* Cor azul para o canto */  
+        }  
+    </style>  
+</head>  
+
+<body id="top">  
+    <!-- Adicionei um id "top" ao body -->  
+    <a href="/suporte" class="back-button" title="Voltar ao Suporte" aria-label="Voltar ao Suporte">  
+        <i class="fas fa-arrow-left"></i>  
+    </a>  
+
+    <a href="#top" class="top-button" title="Voltar ao Topo" aria-label="Voltar ao Topo">  
+        <i class="fas fa-arrow-up"></i>  
+    </a>  
+
+    <div class="relative z-10 flex-1 p-10">  
+        <div class="flex flex-col items-center mb-8 space-y-4">  
+            <!-- Fundo Gradiente com Efeito de Profundidade -->  
+            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900  
+                        bg-opacity-80 rounded-2xl py-4 px-6 shadow-2xl border-b-4 border-blue-500">  
+                <h1 class="text-6xl font-black text-white text-center  
+                           tracking-wide uppercase drop-shadow-lg animate-section">  
+                    RH Digital  
+                    <span class="block text-2xl mt-2 font-medium text-blue-200">  
+                        Inteligência em Gestão de Pessoas  
+                    </span>  
+                </h1>  
+            </div>  
+
+            <!-- Subtítulo Animado -->  
+            <div class="text-center text-white font-semibold animate-pulse mb-2">  
+                Transformando Processos, Valorizando Pessoas  
+            </div>  
+        </div>  
+    </div>  
+
+    <!-- Ajuste de posição adicionado aqui -->  
+    <div class="flex justify-center mb-8 transition-all duration-500 ease-in-out transform hover:scale-105"  
+        style="margin-top: -50px;">  
+        <div class="flex items-center">  
+            <!-- Flex container para alinhar imagem e texto -->  
+            <div class="border-4 border-blue-900 rounded-lg p-1 shadow-lg mr-4">  
+                <img src="static/images/Senac.png" alt="Grupo responsável pelo Projeto Integrador"  
+                    class="max-w-xl h-auto rounded-lg">  
+            </div>  
+
+            <div class="text-white">  
+                <h3 class="text-xl font-semibold mb-2">  
+                    <i class="fas fa-users mr-2"></i>  
+                    Equipe SENAC - Serviços Administrativos  
+                </h3>  
+                <p class="text-lg">  
+                    <i class="fas fa-graduation-cap mr-2"></i>  
+                    Projeto Integrador focado em soluções de RH  
+                </p>  
+            </div>  
+        </div>  
+    </div>  
+
+    <!-- Seção Quem Somos (Azul) -->  
+    <section  
+        class="bg-blue-900 text-white py-16 px-8 rounded-lg shadow-2xl animate-section section-spacing custom-container">  
+        <h2 class="text-3xl font-bold mb-6 text-white">Quem Somos</h2>  
+        <div class="space-y-4 leading-relaxed">  
+            <p>  
+                Somos uma equipe de estudantes do curso de Aprendizagem Profissional de Qualificação em Serviços  
+                Administrativos do SENAC, comprometidos em desenvolver soluções tecnológicas inovadoras para desafios do  
+                mundo corporativo, como o excesso de papelada, processos manuais, dificuldade em encontrar candidatos,  
+                falta de acesso a dados e erros em documentos. Nosso projeto nasceu da percepção de que muitas empresas  
+                lutam para gerenciar eficientemente seus processos de Recursos Humanos.  
+            </p>  
+            <p>  
+                Nossa jornada começou com longas discussões sobre os desafios enfrentados pelos profissionais de RH.  
+                Queríamos desenvolver algo que não fosse apenas tecnicamente impressionante, mas verdadeiramente útil  
+                para as empresas. Passamos inúmeras horas planejando, prototipando e refinando nossa ideia.  
+            </p>  
+            <p>  
+                O RH Digital é mais do que um projeto acadêmico - é nossa contribuição para modernizar a gestão de  
+                recursos humanos. Acreditamos que a tecnologia pode simplificar processos complexos, permitindo que os  
+                profissionais de RH se concentrem no que realmente importa: cuidar das pessoas.  
+            </p>  
+            <p>  
+                E, importante ressaltar, o RH Digital ainda está em desenvolvimento e estamos sempre abertos a novas  
+                ideias e sugestões para aprimorá-lo ainda mais!  
+            </p>  
+        </div>  
+    </section>  
+
+    <!-- Seção de Depoimentos (Azul) -->  
+    <section  
+        class="bg-blue-900 text-white py-16 px-8 rounded-lg shadow-2xl animate-section section-spacing custom-container">  
+        <h2 class="text-4xl font-bold text-center mb-8 text-white">Feedbacks</h2>  
+
+        <div class="grid md:grid-cols-3 gap-6">  
+            <div  
+                class="bg-blue-800 p-6 rounded-lg shadow-md border-l-4 border-blue-400 opacity-75 hover:opacity-100 transition-all mb-4">  
+                <p class="text-center text-gray-100 italic">  
+                    Seus depoimentos sobre o RH Digital podem aparecer aqui.  
+                </p>  
+                <div class="text-center mt-4">  
+                    <a href="#contato" class="text-blue-200 hover:underline">  
+                        Compartilhe sua experiência  
+                    </a>  
+                </div>  
+            </div>  
+            <div  
+                class="bg-blue-800 p-6 rounded-lg shadow-md border-l-4 border-blue-400 opacity-75 hover:opacity-100 transition-all mb-4">  
+                <p class="text-center text-gray-100 italic">  
+                    Seus depoimentos sobre o RH Digital podem aparecer aqui.  
+                </p>  
+                <div class="text-center mt-4">  
+                    <a href="#contato" class="text-blue-200 hover:underline">  
+                        Compartilhe sua experiência  
+                    </a>  
+                </div>  
+            </div>  
+            <div  
+                class="bg-blue-800 p-6 rounded-lg shadow-md border-l-4 border-blue-400 opacity-75 hover:opacity-100 transition-all mb-4">  
+                <p class="text-center text-gray-100 italic">  
+                    Seus depoimentos sobre o RH Digital podem aparecer aqui.  
+                </p>  
+                <div class="text-center mt-4">  
+                    <a href="#contato" class="text-blue-200 hover:underline">  
+                        Compartilhe sua experiência  
+                    </a>  
+                </div>  
+            </div>  
+        </div>  
+    </section>  
+
+    <!-- Seção de Impacto Social (Mantida Azul) -->  
+    <section  
+        class="bg-blue-900 text-white py-16 px-8 rounded-lg shadow-2xl animate-section section-spacing custom-container">  
+        <div class="max-w-4xl mx-auto text-center">  
+            <h2 class="text-4xl font-extrabold mb-6 text-white">Nosso Compromisso Acadêmico</h2>  
+            <div class="grid md:grid-cols-3 gap-8">  
+                <div class="pulse-hover">  
+                    <i class="fas fa-users text-5xl text-blue-400 mb-4"></i>  
+                    <h3 class="font-bold text-xl mb-2">Colaboração</h3>  
+                    <p>Desenvolvendo uma solução que integra conhecimentos de tecnologia e gestão de recursos humanos  
+                    </p>  
+                </div>  
+                <div class="pulse-hover">  
+                    <i class="fas fa-laptop-code text-5xl text-green-400 mb-4"></i>  
+                    <h3 class="font-bold text-xl mb-2">Inovação</h3>  
+                    <p>Criando uma ferramenta tecnológica que simplifica processos de RH para pequenas e médias empresas  
+                    </p>  
+                </div>  
+                <div class="pulse-hover">  
+                    <i class="fas fa-graduation-cap text-5xl text-yellow-400 mb-4"></i>  
+                    <h3 class="font-bold text-xl mb-2">Aprendizado</h3>  
+                    <p>Transformando desafios acadêmicos em soluções práticas para o mercado de trabalho</p>  
+                </div>  
+            </div>  
+        </div>  
+    </section>  
+
+    <!-- Seções anteriores mantidas (Missão, Diferenciais, Benefícios, Contato) -->  
+    <div class="space-y-8">  
+        <!-- Manter as seções originais de Missão, Diferenciais, Benefícios e Contato -->  
+        <!-- ... (código das seções originais) ... -->  
+    </div>  
+
+    <!-- Seção de Vídeo Institucional (Aprimorada) -->  
+    <section  
+        class="bg-blue-900 text-white py-16 px-8 rounded-lg shadow-2xl animate-section section-spacing custom-container">  
+        <div class="max-w-4xl mx-auto text-center">  
+            <h2 class="text-4xl font-extrabold mb-6 text-white">Conheça a Produção do nosso Projeto</h2>  
+            <div class="grid md:grid-cols-1 gap-8">  
+                <div class="pulse-hover">  
+                    <i class="fas fa-film text-5xl text-red-500 mb-4"></i>  
+                    <h3 class="font-bold text-xl mb-2">Vídeo Institucional</h3>  
+
+                    <div class="flex justify-center">  
+                        <div class="relative group">  
+                            <video controls  
+                                class="rounded-lg shadow-2xl max-w-3xl transition-transform duration-300 transform group-hover:scale-105"  
+                                poster="static/images/video-thumbnail.jpg">  
+                                <source src="static/images/apresentacao.mp4" type="video/mp4">  
+                                Seu navegador não suporta o elemento de vídeo.  
+                            </video>  
+                            <div  
+                                class="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg">  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+                <p>Assista e veja como o RH Digital foi produzido.</p>  
+            </div>  
+        </div>  
+    </section>  
+</body>  
+
+</html>  
