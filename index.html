@@ -5,7 +5,7 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Quem Somos - RH Digital</title>  
-    <link rel="icon" type="image/png" href="static/images/Icone Quem Somos.png">  
+    <link rel="icon" type="image/png" href="Icone Quem Somos.png">  
 
     <!-- Meta Tags SEO e Social -->  
     <meta name="description"  
@@ -29,13 +29,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');  
 
         body {  
-            font-family: 'Inter', sans-serif;  
-            background-image: url('static/images/Fundo Quem Somos.png');  
+            background-image: url("Fundo Quem somos.png");  
+            /* Use o nome exato do seu arquivo */  
             background-size: cover;  
-            background-position: center;  
-            min-height: 100vh;  
-            color: #1F2937;  
-            /* Cor padrão para o texto */  
+            background-repeat: no-repeat;  
+            background-attachment: fixed;  
+            font-family: 'Inter', sans-serif; /* Garante que a fonte Inter seja aplicada */  
         }  
 
         @keyframes fadeIn {  
@@ -72,28 +71,6 @@
             animation: pulse 1s infinite;  
         }  
 
-        .back-button {  
-            position: fixed;  
-            top: 20px;  
-            left: 20px;  
-            background-color: #3B82F6;  
-            color: white;  
-            border-radius: 50%;  
-            width: 50px;  
-            height: 50px;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            transition: all 0.3s ease;  
-            z-index: 100;  
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  
-        }  
-
-        .back-button:hover {  
-            background-color: #2563EB;  
-            transform: scale(1.1) rotate(360deg);  
-        }  
-
         .top-button {  
             position: fixed;  
             bottom: 20px;  
@@ -119,61 +96,81 @@
         /* Classe para restringir a largura e centralizar as seções */  
         .custom-container {  
             max-width: 1200px;  
-            /* Aumenta a largura máxima das seções */  
             margin: 0 auto;  
-            /* Centraliza horizontalmente */  
             padding: 20px;  
-            /* Adiciona espaço interno */  
         }  
 
         .section-spacing {  
             margin-bottom: 3rem;  
-            /* Aumenta o espaçamento entre seções */  
         }  
 
         /* Estilização geral da barra de rolagem */  
         ::-webkit-scrollbar {  
-            width: 12px;  
-            /* Largura da barra de rolagem */  
+            width: 8px; /* Reduz a largura da barra de rolagem */  
         }  
 
-        /* Estilização do "polegar" (a parte que você arrasta) */  
+        /* Estilização do "polegar" */  
         ::-webkit-scrollbar-thumb {  
             background-color: #3B82F6;  
-            /* Cor azul */  
-            border-radius: 6px;  
-            /* Borda arredondada */  
-            border: 3px solid #000;  
-            /* Cor de fundo do body */  
+            border-radius: 4px; /* Reduz o raio da borda */  
+            border: 2px solid #000; /* Reduz a largura da borda */  
         }  
 
-        /* Estilização da trilha da barra de rolagem */  
+        /* Estilização da trilha */  
         ::-webkit-scrollbar-track {  
             background-color: #000;  
-            /* Cor de fundo da trilha */  
-            border-radius: 6px;  
+            border-radius: 4px; /* Reduz o raio da borda */  
         }  
 
         /* Estilização do "polegar" ao passar o mouse */  
         ::-webkit-scrollbar-thumb:hover {  
             background-color: #2563EB;  
-            /* Azul mais escuro no hover */  
         }  
 
-        /* Estilização da área do canto da barra de rolagem */  
+        /* Estilização da área do canto */  
         ::-webkit-scrollbar-corner {  
             background-color: #3B82F6;  
-            /* Cor azul para o canto */  
+        }  
+
+        /* Adaptações para dispositivos móveis */  
+        @media (max-width: 768px) {  
+            .custom-container {  
+                padding: 10px; /* Reduz o preenchimento em telas menores */  
+            }  
+
+            .section-spacing {  
+                margin-bottom: 2rem; /* Reduz o espaçamento entre seções */  
+            }  
+
+            h1 {  
+                font-size: 3rem; /* Reduz o tamanho da fonte do título */  
+            }  
+
+            .md\:grid-cols-3 {  
+                grid-template-columns: repeat(1, minmax(0, 1fr)); /* Empilha as colunas em telas menores */  
+            }  
+
+            .max-w-4xl {  
+                max-width: 100%; /* Garante que a seção ocupe a largura total em telas menores */  
+            }  
+            
+            /* Reduz o tamanho da imagem do SENAC */  
+            .max-w-xl {  
+                max-width: 100%;  
+            }  
+
+            /* Ajusta o tamanho da fonte e o espaçamento na seção da equipe SENAC */  
+            .text-xl {  
+                font-size: 1.2rem;  
+            }  
+            .text-lg {  
+                font-size: 1rem;  
+            }  
         }  
     </style>  
 </head>  
 
 <body id="top">  
-    <!-- Adicionei um id "top" ao body -->  
-    <a href="/suporte" class="back-button" title="Voltar ao Suporte" aria-label="Voltar ao Suporte">  
-        <i class="fas fa-arrow-left"></i>  
-    </a>  
-
     <a href="#top" class="top-button" title="Voltar ao Topo" aria-label="Voltar ao Topo">  
         <i class="fas fa-arrow-up"></i>  
     </a>  
@@ -181,7 +178,7 @@
     <div class="relative z-10 flex-1 p-10">  
         <div class="flex flex-col items-center mb-8 space-y-4">  
             <!-- Fundo Gradiente com Efeito de Profundidade -->  
-            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900  
+            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900   
                         bg-opacity-80 rounded-2xl py-4 px-6 shadow-2xl border-b-4 border-blue-500">  
                 <h1 class="text-6xl font-black text-white text-center  
                            tracking-wide uppercase drop-shadow-lg animate-section">  
@@ -205,7 +202,7 @@
         <div class="flex items-center">  
             <!-- Flex container para alinhar imagem e texto -->  
             <div class="border-4 border-blue-900 rounded-lg p-1 shadow-lg mr-4">  
-                <img src="static/images/Senac.png" alt="Grupo responsável pelo Projeto Integrador"  
+                <img src="Senac.png" alt="Grupo responsável pelo Projeto Integrador"  
                     class="max-w-xl h-auto rounded-lg">  
             </div>  
 
