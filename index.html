@@ -5,7 +5,7 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Quem Somos - RH Digital</title>  
-    <link rel="icon" type="image/png" href="Icone Quem Somos.png">  
+    <link rel="icon" type="image/png" href="static/images/Icone Quem Somos.png">  
 
     <!-- Meta Tags SEO e Social -->  
     <meta name="description"  
@@ -29,12 +29,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');  
 
         body {  
-            background-image: url("Fundo Quem somos.png");  
-            /* Use o nome exato do seu arquivo */  
+            font-family: 'Poppins', sans-serif;  
+            background-image: url('static/images/Fundo Quem Somos.png');  
             background-size: cover;  
-            background-repeat: no-repeat;  
-            background-attachment: fixed;  
-            font-family: 'Poppins', sans-serif; /* Garante que a fonte Inter seja aplicada */  
+            background-position: center;  
+            min-height: 100vh;  
+            color: #1F2937;  
+            /* Cor padrão para o texto */  
         }  
 
         @keyframes fadeIn {  
@@ -71,6 +72,28 @@
             animation: pulse 1s infinite;  
         }  
 
+        .back-button {  
+            position: fixed;  
+            top: 20px;  
+            left: 20px;  
+            background-color: #3B82F6;  
+            color: white;  
+            border-radius: 50%;  
+            width: 50px;  
+            height: 50px;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            transition: all 0.3s ease;  
+            z-index: 100;  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  
+        }  
+
+        .back-button:hover {  
+            background-color: #2563EB;  
+            transform: scale(1.1) rotate(360deg);  
+        }  
+
         .top-button {  
             position: fixed;  
             bottom: 20px;  
@@ -96,81 +119,61 @@
         /* Classe para restringir a largura e centralizar as seções */  
         .custom-container {  
             max-width: 1200px;  
+            /* Aumenta a largura máxima das seções */  
             margin: 0 auto;  
+            /* Centraliza horizontalmente */  
             padding: 20px;  
+            /* Adiciona espaço interno */  
         }  
 
         .section-spacing {  
             margin-bottom: 3rem;  
+            /* Aumenta o espaçamento entre seções */  
         }  
 
         /* Estilização geral da barra de rolagem */  
         ::-webkit-scrollbar {  
-            width: 8px; /* Reduz a largura da barra de rolagem */  
+            width: 12px;  
+            /* Largura da barra de rolagem */  
         }  
 
-        /* Estilização do "polegar" */  
+        /* Estilização do "polegar" (a parte que você arrasta) */  
         ::-webkit-scrollbar-thumb {  
             background-color: #3B82F6;  
-            border-radius: 4px; /* Reduz o raio da borda */  
-            border: 2px solid #000; /* Reduz a largura da borda */  
+            /* Cor azul */  
+            border-radius: 6px;  
+            /* Borda arredondada */  
+            border: 3px solid #000;  
+            /* Cor de fundo do body */  
         }  
 
-        /* Estilização da trilha */  
+        /* Estilização da trilha da barra de rolagem */  
         ::-webkit-scrollbar-track {  
             background-color: #000;  
-            border-radius: 4px; /* Reduz o raio da borda */  
+            /* Cor de fundo da trilha */  
+            border-radius: 6px;  
         }  
 
         /* Estilização do "polegar" ao passar o mouse */  
         ::-webkit-scrollbar-thumb:hover {  
             background-color: #2563EB;  
+            /* Azul mais escuro no hover */  
         }  
 
-        /* Estilização da área do canto */  
+        /* Estilização da área do canto da barra de rolagem */  
         ::-webkit-scrollbar-corner {  
             background-color: #3B82F6;  
-        }  
-
-        /* Adaptações para dispositivos móveis */  
-        @media (max-width: 768px) {  
-            .custom-container {  
-                padding: 10px; /* Reduz o preenchimento em telas menores */  
-            }  
-
-            .section-spacing {  
-                margin-bottom: 2rem; /* Reduz o espaçamento entre seções */  
-            }  
-
-            h1 {  
-                font-size: 3rem; /* Reduz o tamanho da fonte do título */  
-            }  
-
-            .md\:grid-cols-3 {  
-                grid-template-columns: repeat(1, minmax(0, 1fr)); /* Empilha as colunas em telas menores */  
-            }  
-
-            .max-w-4xl {  
-                max-width: 100%; /* Garante que a seção ocupe a largura total em telas menores */  
-            }  
-            
-            /* Reduz o tamanho da imagem do SENAC */  
-            .max-w-xl {  
-                max-width: 100%;  
-            }  
-
-            /* Ajusta o tamanho da fonte e o espaçamento na seção da equipe SENAC */  
-            .text-xl {  
-                font-size: 1.2rem;  
-            }  
-            .text-lg {  
-                font-size: 1rem;  
-            }  
+            /* Cor azul para o canto */  
         }  
     </style>  
 </head>  
 
 <body id="top">  
+    <!-- Adicionei um id "top" ao body -->  
+    <a href="/inicio" class="back-button" title="Voltar ao Suporte" aria-label="Voltar ao Suporte">  
+        <i class="fas fa-arrow-left"></i>  
+    </a>  
+
     <a href="#top" class="top-button" title="Voltar ao Topo" aria-label="Voltar ao Topo">  
         <i class="fas fa-arrow-up"></i>  
     </a>  
@@ -178,20 +181,20 @@
     <div class="relative z-10 flex-1 p-10">  
         <div class="flex flex-col items-center mb-8 space-y-4">  
             <!-- Fundo Gradiente com Efeito de Profundidade -->  
-            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900   
+            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900  
                         bg-opacity-80 rounded-2xl py-4 px-6 shadow-2xl border-b-4 border-blue-500">  
                 <h1 class="text-6xl font-black text-white text-center  
                            tracking-wide uppercase drop-shadow-lg animate-section">  
                     RH Digital  
                     <span class="block text-2xl mt-2 font-medium text-blue-200">  
-                        Inteligência em Gestão de Pessoas  
+                        HRIS Connect  
                     </span>  
                 </h1>  
             </div>  
 
             <!-- Subtítulo Animado -->  
             <div class="text-center text-white font-semibold animate-pulse mb-2">  
-                Transformando Processos, Valorizando Pessoas  
+                Simplificando Processos, Potencializando Pessoas!  
             </div>  
         </div>  
     </div>  
@@ -202,14 +205,14 @@
         <div class="flex items-center">  
             <!-- Flex container para alinhar imagem e texto -->  
             <div class="border-4 border-blue-900 rounded-lg p-1 shadow-lg mr-4">  
-                <img src="Senac.png" alt="Grupo responsável pelo Projeto Integrador"  
+                <img src="static/images/Senac.png" alt="Grupo responsável pelo Projeto Integrador"  
                     class="max-w-xl h-auto rounded-lg">  
             </div>  
 
             <div class="text-white">  
                 <h3 class="text-xl font-semibold mb-2">  
                     <i class="fas fa-users mr-2"></i>  
-                    Equipe SENAC - Serviços Administrativos  
+                    Turma 170 ADM - Serviços Administrativos  
                 </h3>  
                 <p class="text-lg">  
                     <i class="fas fa-graduation-cap mr-2"></i>  
