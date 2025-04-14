@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Projeto RH Digital</title>
+    <link rel="icon" type="image/png" href="Icone Quem Somos.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #ecfdf5;
+            --secondary-color: #3b82f6;
+            --secondary-dark: #2563eb;
+            --dark-color: #0f172a;
+            --light-color: #f1f5f9;
+            --gray-color: #475569;
+            --gray-light: #cbd5e1;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --gradient-hero-quem-somos: linear-gradient(135deg, rgba(241, 245, 249, 0.95), rgba(236, 253, 245, 0.90));
+
+            --box-shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --box-shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --box-shadow-hover: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+            --border-radius: 10px;
+            --transition-speed: 0.4s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--box-shadow-sm);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--dark-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            transition: width var(--transition-speed) ease;
+        }
+
+        nav ul li a:hover { color: var(--primary-color); }
+        nav ul li a:hover::after { width: 70%; }
+
+        .header-buttons { display: flex; gap: 15px; }
+
+        .btn {
+            padding: 12px 28px;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--box-shadow-sm);
+            border: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: var(--box-shadow-lg);
+            filter: brightness(1.1);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--dark-color);
+            border: 2px solid var(--gray-light);
+        }
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-sm);
+        }
+         .btn-light {
+            background: white;
+            color: var(--primary-dark);
+            box-shadow: var(--box-shadow-sm);
+            border: none;
+        }
+        .btn-light:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--box-shadow);
+        }
+
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 120px;
+            background: var(--gradient-hero-quem-somos), url('Fundo Quem Somos.png') no-repeat center center; 
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+        .hero-content h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: var(--gray-color);
+            margin-bottom: 35px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+        .hero-buttons { display: flex; gap: 15px; }
+
+        .hero-image-quem-somos img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            transition: transform var(--transition-speed) ease;
+        }
+        .hero-image-quem-somos:hover img {
+            transform: scale(1.03) rotate(-1deg);
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        #sobre { padding-bottom: 60px; }
+        #compromisso { background-color: white; }
+        #equipe { background-color: var(--primary-light); }
+        #feedbacks { background-color: var(--light-color); }
+        #projeto { background: var(--gradient-dark); color: white; overflow: hidden; }
+        #faq { background-color: var(--light-color); }
+        .cta {
+            padding: 80px 0;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 0 auto 70px;
+            max-width: 750px;
+        }
+        .section-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #projeto .section-label { color: rgba(255, 255, 255, 0.8); }
+        .cta .section-label { color: rgba(255, 255, 255, 0.9); }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            color: var(--dark-color);
+        }
+        #projeto .section-title, .cta .section-title { color: white; }
+
+        .section-description {
+            color: var(--gray-color);
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #projeto .section-description, .cta .section-description { color: rgba(255, 255, 255, 0.85); }
+
+        .compromisso-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .projeto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+         #projeto::before {
+             content: ''; position: absolute; right: -10%; top: -30%;
+             width: 600px; height: 600px; background: rgba(255, 255, 255, 0.08);
+             border-radius: 50%;
+         }
+         #projeto::after {
+             content: ''; position: absolute; left: -15%; bottom: -40%;
+             width: 800px; height: 800px; background: rgba(255, 255, 255, 0.04);
+             border-radius: 50%;
+         }
+
+        .compromisso-card, .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 35px;
+            transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .compromisso-card:hover, .testimonial-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: var(--box-shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .compromisso-icon {
+            width: 55px; height: 55px; background: var(--gradient-primary);
+            color: white; font-size: 22px; margin-bottom: 25px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .compromisso-title {
+            font-size: 19px; font-weight: 600; margin-bottom: 15px; color: var(--dark-color);
+        }
+        .compromisso-description {
+            font-size: 15px; line-height: 1.65; color: var(--gray-color); flex-grow: 1;
+        }
+
+        #equipe .swiper-container {
+            width: 100%;
+            padding-top: 30px;
+            padding-bottom: 70px;
+            position: relative;
+        }
+        #equipe .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 340px;
+            background-color: #fdfdff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+            padding: 35px;
+            text-align: center;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, opacity var(--transition-speed) ease;
+            border: 1px solid #eaf0f6;
+            transform: scale(0.85);
+            opacity: 0.7;
+        }
+
+        #equipe .swiper-slide-active {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-light);
+        }
+
+        #equipe .swiper-slide:not(.swiper-slide-active):hover {
+           transform: scale(0.88) translateY(-5px);
+           box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .equipe-membro-foto {
+           width: 250px;
+           height: 250px;
+           border-radius: 50%;
+           object-fit: contain;
+           background-color: var(--primary-color);
+           margin: 0 auto 30px;
+           display: block;
+           border: 4px solid white;
+           box-shadow: 0 0 0 4px var(--primary-color), 0 5px 15px rgba(0, 0, 0, 0.1);
+           overflow: hidden;
+           margin: 0 auto 25px;
+        }
+        .equipe-membro-nome {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        .cargo-info {
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+
+        .cargo-descricao {
+            font-size: 16px;
+            color: var(--gray-color);
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .cargo-sigla {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        #equipe .swiper-button-next,
+        #equipe .swiper-button-prev {
+            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            box-shadow: var(--box-shadow-sm);
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+         #equipe .swiper-button-next:hover,
+         #equipe .swiper-button-prev:hover {
+             background-color: var(--primary-color);
+             color: white;
+         }
+
+        #equipe .swiper-button-next::after,
+        #equipe .swiper-button-prev::after {
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        #equipe .swiper-pagination-bullet {
+            background-color: var(--gray-light);
+            opacity: 0.8;
+            width: 10px;
+            height: 10px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            margin: 0 5px !important;
+        }
+
+        #equipe .swiper-pagination-bullet-active {
+            background-color: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        .testimonial-card { background-color: white; border: 1px solid var(--gray-light); }
+        .testimonial-content {
+            margin-bottom: 25px; font-size: 16px; line-height: 1.75;
+            color: var(--gray-color); font-style: italic; position: relative;
+            padding-left: 25px; flex-grow: 1;
+        }
+        .testimonial-content::before {
+            content: '“'; position: absolute; left: 0px; top: -5px;
+            font-size: 40px; color: var(--primary-color); opacity: 0.3;
+            font-family: serif; line-height: 1;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: auto; }
+        .author-avatar { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; object-fit: cover; border: 3px solid var(--primary-light); }
+        .author-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: var(--dark-color); }
+        .author-info p { font-size: 14px; color: var(--primary-color); font-weight: 500; }
+        .testimonial-stars { color: #f59e0b; font-size: 14px; margin-top: 5px; }
+
+        .projeto-content .section-label { color: rgba(255, 255, 255, 0.8); }
+        .projeto-content .section-title { color: white; }
+        .projeto-content .section-description { color: rgba(255, 255, 255, 0.85); margin-bottom: 30px; }
+
+        .projeto-list {
+            list-style: none; margin-bottom: 40px; padding-left: 0;
+        }
+        .projeto-list li {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.9); font-size: 16px;
+        }
+        .check-icon {
+            width: 28px; height: 28px; background: var(--primary-color); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; flex-shrink: 0;
+        }
+        .projeto-image { position: relative; }
+        .projeto-image img, .video-container {
+            border-radius: var(--border-radius); box-shadow: var(--box-shadow-lg);
+        }
+
+        .video-container {
+            border: none; border-radius: var(--border-radius); overflow: hidden;
+            box-shadow: var(--box-shadow-lg); position: relative; width: 100%;
+        }
+        .thumbnail { cursor: pointer; position: relative; width: 100%; display: block; line-height: 0; }
+        .thumbnail img { width: 100%; height: auto; display: block; border-radius: var(--border-radius); transition: transform var(--transition-speed) ease; }
+        .thumbnail:hover img { transform: scale(1.05); }
+        .thumbnail::after {
+            content: '\f144'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); font-size: 70px;
+            color: rgba(255, 255, 255, 0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3); opacity: 0.9;
+            transition: all var(--transition-speed) ease; pointer-events: none;
+        }
+        .thumbnail:hover::after { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+        .thumbnail p { display: none; }
+        video { width: 100%; height: auto; display: block; border-radius: var(--border-radius); outline: none; }
+
+        .faq-grid { max-width: 800px; margin: 50px auto 0; }
+        .faq-item {
+            background: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow-sm);
+            padding: 20px 25px; margin-bottom: 15px; cursor: pointer; transition: all var(--transition-speed) ease;
+            border: 1px solid transparent;
+        }
+        .faq-item:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); border-color: var(--primary-light); }
+        .faq-item.active { box-shadow: var(--box-shadow); border-color: var(--primary-color); }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 17px; font-weight: 500; color: var(--dark-color); line-height: 1.4;
+        }
+        .faq-question span { padding-right: 15px; }
+        .faq-answer {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 1px solid var(--gray-light);
+            font-size: 15px; line-height: 1.7; color: var(--gray-color);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding-top 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+        }
+        .faq-item.active .faq-answer {
+
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+        .faq-question i { transition: transform var(--transition-speed) ease; color: var(--primary-color); font-size: 16px; flex-shrink: 0; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        .cta-content { max-width: 700px; margin: 0 auto; }
+        .cta-title { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; margin-bottom: 15px; }
+        .cta-description { font-size: clamp(1rem, 2.5vw, 1.15rem); color: rgba(255, 255, 255, 0.9); margin-bottom: 35px; line-height: 1.6; }
+        .cta-buttons { display: flex; justify-content: center; gap: 20px; }
+        .cta-buttons .btn-primary { background: white; color: var(--primary-dark); box-shadow: var(--box-shadow); border: none; }
+        .cta-buttons .btn-primary:hover { background: var(--primary-light); box-shadow: var(--box-shadow-lg); transform: translateY(-5px) scale(1.05); filter: none; }
+        .cta-buttons .btn-light { background: transparent; color: white; border: 2px solid rgba(255, 255, 255, 0.8); }
+        .cta-buttons .btn-light:hover { background: rgba(255, 255, 255, 0.1); border-color: white; transform: translateY(-3px); box-shadow: none; }
+
+        footer { background: var(--dark-color); color: rgba(255, 255, 255, 0.7); padding: 80px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 50px; margin-bottom: 60px; }
+        .footer-logo { margin-bottom: 20px; }
+        .footer-logo .logo-text { color: white; }
+        .footer-description { font-size: 15px; line-height: 1.7; margin-bottom: 30px; color: rgba(255, 255, 255, 0.7); }
+        .social-links { display: flex; gap: 15px; }
+        .social-link {
+            width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, 0.15);
+            display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;
+            transition: all var(--transition-speed) ease; text-decoration: none;
+         }
+        .social-link:hover { background: var(--primary-color); transform: translateY(-4px) rotate(5deg); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 25px; color: white; }
+        .footer-links { list-style: none; padding-left: 0; }
+        .footer-links li { margin-bottom: 14px; }
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.7); font-size: 15px; text-decoration: none;
+            transition: all var(--transition-speed) ease; position: relative; padding-left: 0;
+         }
+        .footer-links li a:hover { color: var(--primary-color); padding-left: 10px; }
+        .footer-links li a::before {
+            content: '›'; position: absolute; left: -5px; top: 0; opacity: 0;
+            transition: all var(--transition-speed) ease; color: var(--primary-color);
+         }
+        .footer-links li a:hover::before { opacity: 1; left: 0; }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; text-align: center; font-size: 14px; color: rgba(255, 255, 255, 0.5); }
+
+        [data-aos] { transition-property: transform, opacity; }
+
+        @media (max-width: 992px) {
+            nav ul { display: none; }
+            .hero-grid, .projeto-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-content, .projeto-content { margin-left: auto; margin-right: auto; }
+            .hero-content p, .projeto-content .section-description { max-width: 550px; margin-left: auto; margin-right: auto; }
+            .hero-image-quem-somos {
+                grid-row: 1; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;
+            }
+            .projeto-image { order: -1; max-width: 600px; margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .compromisso-grid, .testimonial-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .footer-grid > div:first-child { grid-column: 1 / -1; text-align: center; }
+            .footer-grid > div:first-child .logo { justify-content: center; }
+            .social-links { justify-content: center; }
+            .footer-grid > div:not(:first-child) { text-align: center; }
+            #equipe .swiper-slide { width: 300px; padding: 30px;}
+            .equipe-membro-foto { width: 150px; height: 150px;}
+        }
+
+        @media (max-width: 768px) {
+            .container { width: 95%; }
+            header .container { padding-left: 15px; padding-right: 15px; }
+            .logo-text { font-size: 18px; }
+            .header-buttons .btn-primary { padding: 10px 20px; font-size: 14px; }
+            .header-buttons .btn-outline { display: none; }
+            .hero { padding-top: 120px; padding-bottom: 60px; }
+            .section { padding: 80px 0; }
+            .section-title { font-size: clamp(1.8rem, 6vw, 2.2rem); }
+            .section-description { font-size: clamp(0.95rem, 3vw, 1rem); }
+            .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
+            .hero-buttons .btn { width: 100%; max-width: 300px; }
+            .compromisso-grid, .testimonial-grid { grid-template-columns: 1fr; gap: 25px; }
+            .projeto-grid { gap: 30px; }
+            .cta-buttons { flex-direction: column; align-items: center; gap: 15px; }
+            .cta-buttons .btn { width: 100%; max-width: 320px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 15px; }
+            .footer-grid > div { margin-bottom: 25px; }
+            .footer-links { text-align: center; }
+            .footer-links li a:hover { padding-left: 0; }
+            .footer-links li a::before { display: none; }
+             #equipe .swiper-slide { width: 85%; max-width: 300px; }
+             .equipe-membro-foto { width: 140px; height: 140px;}
+             #equipe .swiper-button-next, #equipe .swiper-button-prev { display: none; }
+        }
+
+       #funcionalidades .swiper-container {
+          width: 100%;
+          padding-top: 20px;
+          padding-bottom: 60px;
+          position: relative;
+       }
+
+       #funcionalidades .swiper-slide.funcionalidade-slide {
+           background-color: #ffffff;
+           border-radius: var(--border-radius);
+           box-shadow: var(--box-shadow);
+           padding: 25px;
+           text-align: center;
+           transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+           border: 1px solid var(--gray-light);
+           width: 300px;
+       }
+
+        #funcionalidades .swiper-slide.funcionalidade-slide:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-lg);
+         }
+
+
+       #funcionalidades .funcionalidade-img {
+           width: 100%;
+           max-height: 200px;
+           object-fit: cover;
+           border-radius: calc(var(--border-radius) - 5px);
+           margin-bottom: 20px;
+           border: 1px solid var(--gray-light);
+       }
+
+       #funcionalidades .funcionalidade-titulo {
+           font-size: 18px;
+           font-weight: 600;
+           color: var(--dark-color);
+           margin-bottom: 8px;
+       }
+
+       #funcionalidades .funcionalidade-desc {
+           font-size: 14px;
+           color: var(--gray-color);
+           line-height: 1.5;
+       }
+
+
+       #funcionalidades .funcionalidades-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+            background-color: var(--gray-light);
+            opacity: 0.8;
+            width: 10px;
+            height: 10px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            margin: 0 5px !important;
+       }
+
+       #funcionalidades .funcionalidades-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+            background-color: var(--primary-color);
+            transform: scale(1.3);
+       }
+
+       #funcionalidades .funcionalidades-button-prev,
+       #funcionalidades .funcionalidades-button-next {
+            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: var(--box-shadow-sm);
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+       }
+       #funcionalidades .funcionalidades-button-prev:hover,
+       #funcionalidades .funcionalidades-button-next:hover {
+            background-color: var(--primary-color);
+            color: white;
+       }
+
+       #funcionalidades .funcionalidades-button-prev::after,
+       #funcionalidades .funcionalidades-button-next::after {
+            font-size: 18px;
+            font-weight: 900;
+       }
+
+       @media (max-width: 768px) {
+           #funcionalidades .swiper-slide.funcionalidade-slide {
+               width: 80%;
+           }
+           #funcionalidades .funcionalidades-button-prev,
+           #funcionalidades .funcionalidades-button-next {
+               display: none;
+           }
+       }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Logo RH Digital.png" alt="Logo RH Digital" class="logo-icon"> 
+                <span class="logo-text">RH Digital - HRIS Connect</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#compromisso">Compromisso</a></li>
+                    <li><a href="#projeto">O Projeto</a></li>
+                    <li><a href="#equipe">Equipe</a></li> <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                 <a href="/inicio" class="btn btn-primary">Voltar ao Início</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content" data-aos="fade-right">
+                 <h1>Estudantes do <span>SENAC</span> inovando a Gestão de Pessoas</h1>
+                 <p>Somos a Turma 170 ADM de Serviços Administrativos do SENAC, e este é o RH Digital - HRIS Connect: nosso Projeto Integrador focado em simplificar e humanizar os processos de Recursos Humanos através da tecnologia.</p>
+                <div class="hero-buttons">
+                    <a href="#projeto" class="btn btn-primary">
+                        <i class="fas fa-lightbulb"></i> Conheça o Projeto
+                    </a>
+                    <a href="#compromisso" class="btn btn-outline">
+                        <i class="fas fa-users"></i> Nosso Compromisso
+                    </a>
+                </div>
+             </div>
+            <div class="hero-image-quem-somos" data-aos="fade-left">
+                <img src="Senac.png" alt="Turma SENAC Projeto Integrador"> 
+            </div>
+        </div>
+    </section>
+
+    <section id="compromisso" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">NOSSOS PILARES</span>
+                <h2 class="section-title">O que nos motiva neste projeto</h2>
+                <p class="section-description">Guiados pelo aprendizado prático e pela vontade de fazer a diferença, nosso trabalho se baseia em três pilares fundamentais.</p>
+            </div>
+
+            <div class="compromisso-grid">
+                <div class="compromisso-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="compromisso-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="compromisso-title">Colaboração</h3>
+                    <p class="compromisso-description">Desenvolvemos esta solução unindo conhecimentos diversos de tecnologia e gestão, simulando um ambiente real de trabalho em equipe.</p>
+                </div>
+                <div class="compromisso-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="compromisso-icon">
+                         <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="compromisso-title">Inovação</h3>
+                    <p class="compromisso-description">Buscamos criar uma ferramenta tecnológica que traga soluções modernas e eficientes para os desafios enfrentados pelo RH no dia a dia.</p>
+                </div>
+                <div class="compromisso-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="compromisso-icon">
+                         <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="compromisso-title">Aprendizado</h3>
+                    <p class="compromisso-description">Aplicamos os conceitos aprendidos no curso de Serviços Administrativos do SENAC para transformar um desafio acadêmico em um projeto prático e relevante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projeto" class="section">
+        <div class="container projeto-grid">
+            <div class="projeto-content" data-aos="fade-right">
+                <span class="section-label">O PROJETO RH DIGITAL</span>
+                <h2 class="section-title">Simplificando o RH com Tecnologia</h2>
+                <p class="section-description">O RH Digital - HRIS Connect nasceu da necessidade de modernizar processos, reduzir a burocracia e permitir que os profissionais de RH foquem no capital humano.</p>
+                 <ul class="projeto-list">
+                    <li>
+                        <div class="check-icon"><i class="fas fa-check"></i></div>
+                        <span>Gestão centralizada de candidatos e funcionários.</span>
+                    </li>
+                    <li>
+                        <div class="check-icon"><i class="fas fa-check"></i></div>
+                        <span>Ferramentas para otimizar o recrutamento e seleção.</span>
+                    </li>
+                     <li>
+                        <div class="check-icon"><i class="fas fa-check"></i></div>
+                        <span>Calendário dinâmico para organização de tarefas e entrevistas.</span>
+                    </li>
+                     <li>
+                        <div class="check-icon"><i class="fas fa-check"></i></div>
+                        <span>Dashboards intuitivos para análise de dados.</span>
+                    </li>
+                     <li>
+                        <div class="check-icon"><i class="fas fa-check"></i></div>
+                        <span>Interface amigável e acessível.</span>
+                    </li>
+                 </ul>
+                <a href="/inicio" class="btn btn-light">Acessar Plataforma (Demo)</a>
+            </div>
+            <div class="projeto-image" data-aos="fade-left">
+                <div class="video-container">
+                    <div class="thumbnail" onclick="playVideo()">
+                        <img src="Site Vídeo RH Digital.png" alt="Miniatura Vídeo Projeto RH Digital"> 
+                    </div>
+                    <video id="video" style="display: none;" controls poster="Site Vídeo RH Digital.png">
+                         <source src="RH Digital Legendado.mp4" type="video/mp4"> 
+                        Seu navegador não suporta o vídeo.
+                    </video>
+                </div>
+            </section>
+            <section id="funcionalidades" class="section" style="background-color: white;">
+                 <div class="container">
+                     <div class="section-header" data-aos="fade-up">
+                         <span class="section-label">FUNCIONALIDADES</span>
+                         <h2 class="section-title">Explore a Plataforma</h2>
+                         <p class="section-description">Navegue por algumas das principais telas do RH Digital - HRIS Connect.</p>
+                     </div>
+
+                     <div class="swiper-container funcionalidades-swiper" id="galeria-funcionalidades" data-aos="fade-up" data-aos-delay="100">
+                         <div class="swiper-wrapper">
+                             <div class="swiper-slide funcionalidade-slide">
+                                 <a href="Dashboard Carrossel.png"          
+                                    data-pswp-src="Dashboard Carrossel.png"  
+                                    data-pswp-width="LARGURA_ORIGINAL_AQUI"
+                                    data-pswp-height="ALTURA_ORIGINAL_AQUI"
+                                    target="_blank">
+                                      <img src="Dashboard Carrossel.png" alt="Dashboard RH Digital" class="funcionalidade-img"> 
+                                  </a>
+                                 <h4 class="funcionalidade-titulo">Dashboard</h4>
+                                 <p class="funcionalidade-desc">Visão geral e indicadores chave.</p>
+                             </div>
+                             <div class="swiper-slide funcionalidade-slide">
+                                 <a href="Candidatos Carrossel.png"          
+                                    data-pswp-src="Candidatos Carrossel.png"  
+                                    data-pswp-width="LARGURA_ORIGINAL_AQUI"
+                                    data-pswp-height="ALTURA_ORIGINAL_AQUI"
+                                    target="_blank">
+                                      <img src="Candidatos Carrossel.png" alt="Tela de Candidatos" class="funcionalidade-img"> 
+                                  </a>
+                                 <h4 class="funcionalidade-titulo">Gestão de Candidatos</h4>
+                                 <p class="funcionalidade-desc">Organize e acompanhe processos seletivos.</p>
+                             </div>
+                             <div class="swiper-slide funcionalidade-slide">
+                                 <a href="Funcionários Carrossel.png"          
+                                     data-pswp-src="Funcionários Carrossel.png" 
+                                     data-pswp-width="LARGURA_ORIGINAL_AQUI"
+                                     data-pswp-height="ALTURA_ORIGINAL_AQUI"
+                                     target="_blank">
+                                       <img src="Funcionários Carrossel.png" alt="Tela de Funcionários" class="funcionalidade-img">
+                                   </a>
+                                   <h4 class="funcionalidade-titulo">Cadastro de Funcionários</h4>
+                                   <p class="funcionalidade-desc">Mantenha informações centralizadas.</p>
+                             </div>
+                             <div class="swiper-slide funcionalidade-slide">
+                                 <a href="Calendário Carrossel.png"          
+                                     data-pswp-src="Calendário Carrossel.png"
+                                     data-pswp-width="LARGURA_ORIGINAL_AQUI"
+                                     data-pswp-height="ALTURA_ORIGINAL_AQUI"
+                                     target="_blank">
+                                       <img src="Calendário Carrossel.png" alt="Tela de Calendário" class="funcionalidade-img"> 
+                                   </a>
+                                   <h4 class="funcionalidade-titulo">Calendário</h4>
+                                   <p class="funcionalidade-desc">Agende entrevistas e tarefas importantes.</p>
+                             </div>
+                         </div>
+                         <div class="swiper-pagination funcionalidades-pagination"></div>
+                         <div class="swiper-button-prev funcionalidades-button-prev"></div>
+                         <div class="swiper-button-next funcionalidades-button-next"></div>
+                     </div>
+                 </div>
+             </section>
+         <section id="equipe" class="section">
+
+     <section id="equipe" class="section">
+         <div class="container">
+             <div class="section-header" data-aos="fade-up">
+                 <span class="section-label">NOSSA EQUIPE</span>
+                 <h2 class="section-title">Conheça os Talentos por Trás do Projeto</h2>
+                 <p class="section-description">Alunos dedicados da Turma 170 ADM do SENAC PE que colaboraram para dar vida ao RH Digital.</p>
+             </div>
+
+             <div class="swiper-container equipe-swiper" data-aos="fade-up" data-aos-delay="100">
+                 <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                         <img src="CEO.jpg" alt="Foto CEO" class="equipe-membro-foto"> 
+                         <div class="cargo-info">
+                             <p class="cargo-sigla">CEO</p>
+                             <p class="cargo-descricao">Executivo & Coordenação</p>
+                         </div>
+                     </div>
+                     <div class="swiper-slide">
+                         <img src="CFO.jpg" alt="Foto CFO" class="equipe-membro-foto"> 
+                         <div class="cargo-info">
+                             <p class="cargo-sigla">CFO</p>
+                             <p class="cargo-descricao">Finanças & Investimentos</p>
+                         </div>
+                     </div>
+                     <div class="swiper-slide">
+                         <img src="CTO.jpg" alt="Foto CTO" class="equipe-membro-foto"> 
+                         <div class="cargo-info">
+                             <p class="cargo-sigla">CTO</p>
+                             <p class="cargo-descricao">Tecnologia & Digitalização</p>
+                         </div>
+                     </div>
+                     <div class="swiper-slide">
+                         <img src="CMO.jpg" alt="Foto CMO" class="equipe-membro-foto"> 
+                         <div class="cargo-info">
+                             <p class="cargo-sigla">CMO</p>
+                             <p class="cargo-descricao">Marketing & Vendas</p>
+                         </div>
+                     </div>
+                     <div class="swiper-slide">
+                         <img src="CDO.jpg" alt="Foto CDO" class="equipe-membro-foto"> 
+                         <div class="cargo-info">
+                             <p class="cargo-sigla">CDO</p>
+                             <p class="cargo-descricao">Design & Experiências</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="swiper-pagination"></div>
+                 <div class="swiper-button-prev"></div>
+                 <div class="swiper-button-next"></div>
+             </div>
+         </div>
+     </section>
+     <section id="feedbacks" class="section">
+         <div class="container">
+             <div class="section-header" data-aos="fade-up">
+                 <span class="section-label">FEEDBACKS</span>
+                 <h2 class="section-title">Opiniões sobre nosso Projeto Integrador</h2>
+                 <p class="section-description">Veja o que disseram sobre o desenvolvimento e a proposta do RH Digital.</p>
+             </div>
+
+             <div class="testimonial-grid">
+                  <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                     <div class="testimonial-content">
+                         ---
+                     </div>
+                     <div class="testimonial-author">
+                         <div class="author-avatar"> </div>
+                         <div class="author-info">
+                             <h4>---</h4>
+                             <p>---</p>
+                              <div class="testimonial-stars">
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                     <div class="testimonial-content">
+                         O RH Digital - HRIS Connect acredito que seja uma solução que simplificará a gestão de Recursos Humanos, oferecendo ferramentas avançadas para recrutamento, gestão de talentos e análise de desempenho. Por estar em sua fase inicial, ainda não possui todas as funcionalidades que gostaria de ver, mas a equipe está comprometida em desenvolver e aprimorar a plataforma.
+                     </div>
+                     <div class="testimonial-author">
+                         <div class="author-avatar"> <img src="Fábio.jpg" alt="Fábio Silva"> </div> 
+                         <div class="author-info">
+                             <h4>Fábio Silva</h4>
+                             <p>Analista de Sistemas</p>
+                              <div class="testimonial-stars">
+                                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+                  <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                     <div class="testimonial-content">
+                         Queremos ouvir sua opinião! Use a seção de contato ou nossas redes sociais para compartilhar seu feedback sobre o projeto.
+                     </div>
+                     <div class="testimonial-author">
+                         <div class="author-avatar"> <i class="fas fa-comments" style="font-size: 24px; text-align: center; width:100%; color: var(--primary-color);"></i> </div>
+                         <div class="author-info">
+                             <h4>Sua Opinião</h4>
+                             <p>Importante para nós!</p>
+                             </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <section id="faq" class="section">
+         <div class="container">
+             <div class="section-header" data-aos="fade-up">
+                 <span class="section-label">PERGUNTAS FREQUENTES</span>
+                 <h2 class="section-title">Dúvidas sobre o Projeto e a Equipe</h2>
+                 <p class="section-description">Encontre respostas para perguntas comuns sobre o desenvolvimento do RH Digital.</p>
+             </div>
+
+             <div class="faq-grid">
+                 <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                     <div class="faq-question">
+                         <span>Qual o principal objetivo deste Projeto Integrador?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>O objetivo principal é aplicar os conhecimentos adquiridos no curso de Serviços Administrativos do SENAC em um projeto prático, desenvolvendo uma solução tecnológica (RH Digital) que aborda desafios reais da área de Recursos Humanos, como a otimização de processos e a gestão de talentos.</p>
+                     </div>
+                 </div>
+                  <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                     <div class="faq-question">
+                         <span>Quem são os integrantes da equipe?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>A equipe é composta pelos alunos da Turma 170 ADM do curso de Aprendizagem Profissional de Qualificação em Serviços Administrativos do SENAC. Cada membro contribuiu com suas habilidades e conhecimentos para as diferentes fases do projeto, desde a concepção até o desenvolvimento.</p>
+                          </div>
+                 </div>
+                  <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                     <div class="faq-question">
+                         <span>Quais tecnologias foram usadas no desenvolvimento?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>O projeto utilizou tecnologias web modernas. Para o Front-End (interface do usuário), foram empregados HTML, CSS e JavaScript. Para o Back-End (lógica do servidor e banco de dados), utilizamos Python com o framework Flask e um banco de dados SQL (como SQLite ou PostgreSQL, dependendo da fase).</p>
+                     </div>
+                 </div>
+                 <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                     <div class="faq-question">
+                         <span>O RH Digital já está pronto para uso comercial?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Atualmente, o RH Digital - HRIS Connect é um protótipo funcional desenvolvido como Projeto Integrador. Ele demonstra as funcionalidades chave e o potencial da plataforma. Para uso comercial completo, seriam necessárias fases adicionais de testes, segurança aprofundada e desenvolvimento de mais funcionalidades, além de uma infraestrutura robusta.</p>
+                     </div>
+                 </div>
+                  <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                     <div class="faq-question">
+                         <span>Como posso saber mais ou dar feedback?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Ficamos felizes com seu interesse! Você pode entrar em contato através das nossas redes sociais (link no rodapé) ou, se disponível, utilizar a seção de contato da plataforma principal. Seu feedback é muito valioso para nós!</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <section class="cta">
+         <div class="container">
+             <div class="cta-content" data-aos="fade-up">
+                 <h2 class="cta-title">Gostou de conhecer nosso projeto?</h2>
+                 <p class="cta-description">Explore a plataforma ou volte para a página inicial.</p>
+                 <div class="cta-buttons">
+                      <a href="/login" class="btn btn-primary">
+                         <i class="fas fa-rocket"></i> Acessar Plataforma
+                     </a>
+                      <a href="/inicio" class="btn btn-light">
+                         <i class="fas fa-home"></i> Voltar ao Início
+                     </a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <footer>
+         <div class="container">
+             <div class="footer-grid">
+                 <div>
+                     <div class="footer-logo">
+                         <div class="logo">
+                              <img src="Logo RH Digital.png" alt="Logo RH Digital" class="logo-icon">
+                              <span class="logo-text">RH Digital - HRIS Connect</span>
+                         </div>
+                     </div>
+                     <p class="footer-description">Projeto Integrador desenvolvido pela Turma 170 ADM do SENAC PE. Uma solução pensada para modernizar a gestão de Recursos Humanos.</p>
+                     <div class="social-links">
+                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                         <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                         <a href="https://www.instagram.com/rhdigitalhris/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                     </div>
+                 </div>
+
+                 <div>
+                     <h3 class="footer-heading">O Projeto</h3>
+                     <ul class="footer-links">
+                         <li><a href="#sobre">Sobre Nós</a></li>
+                         <li><a href="#compromisso">Compromisso</a></li>
+                          <li><a href="#equipe">Equipe</a></li> <li><a href="#projeto">Funcionalidades</a></li>
+                          <li><a href="#faq">FAQ do Projeto</a></li>
+                          <li><a href="/inicio">Acessar Plataforma</a></li>
+                     </ul>
+                 </div>
+
+                 <div>
+                     <h3 class="footer-heading">SENAC PE</h3>
+                     <ul class="footer-links">
+                         <li><a href="https://www.pe.senac.br/" target="_blank" rel="noopener noreferrer">Site Oficial</a></li>
+                         <li><a href="https://www.pe.senac.br/cursos-programas/aprendizagem/" target="_blank" rel="noopener noreferrer">Programa de Aprendizagem</a></li>
+                         <li><a href="#">Curso Serv. Administrativos</a></li>
+                          <li><a href="#">Turma 170 ADM</a></li>
+                          <li><a href="#">Projeto Integrador</a></li>
+                     </ul>
+                 </div>
+
+                  <div>
+                     <h3 class="footer-heading">Contato</h3>
+                     <ul class="footer-links">
+                         <li><a href="#">Em Produção</a></li>
+                         <li><a href="#">Em Produção</a></li>
+                         <li><a href="#">Em Produção</a></li>
+                          <li><a href="#">Em Produção</a></li>
+                     </ul>
+                 </div>
+             </div>
+
+             <div class="footer-bottom">
+                  <p>&copy; <script>document.write(new Date().getFullYear())</script> RH Digital (Projeto Integrador) - Turma 170 ADM.</p>
+             </div>
+         </div>
+     </footer>
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.umd.min.js"></script>
+     <script src="https://unpkg.com/photoswipe@5/dist/photoswipe.umd.min.js"></script>
+
+     <script>
+         AOS.init({
+             duration: 800,
+             easing: 'ease-in-out',
+             once: true,
+             offset: 50
+         });
+
+         const faqItems = document.querySelectorAll('.faq-item');
+         const maxAnswerHeight = '1000px';
+
+         faqItems.forEach(item => {
+             const question = item.querySelector('.faq-question');
+             const answer = item.querySelector('.faq-answer');
+             const isOpen = item.classList.contains('active');
+
+             question.setAttribute('aria-expanded', isOpen);
+             answer.setAttribute('aria-hidden', !isOpen);
+             question.setAttribute('role', 'button');
+             question.setAttribute('tabindex', '0');
+             answer.setAttribute('role', 'region');
+
+            if (isOpen) {
+                 answer.style.maxHeight = maxAnswerHeight;
+             } else {
+                  answer.style.maxHeight = null;
+             }
+
+
+             question.addEventListener('click', () => {
+                 const currentlyActive = document.querySelector('.faq-item.active');
+                 if (currentlyActive && currentlyActive !== item) {
+                     currentlyActive.classList.remove('active');
+                     currentlyActive.querySelector('.faq-answer').style.maxHeight = null;
+                     currentlyActive.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                     currentlyActive.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+                 }
+
+                 item.classList.toggle('active');
+                 const isNowOpen = item.classList.contains('active');
+
+                 if (isNowOpen) {
+                     answer.style.maxHeight = maxAnswerHeight;
+                 } else {
+                     answer.style.maxHeight = null;
+                 }
+
+                 question.setAttribute('aria-expanded', isNowOpen);
+                 answer.setAttribute('aria-hidden', !isNowOpen);
+             });
+
+             question.addEventListener('keydown', (event) => {
+                 if (event.key === 'Enter' || event.key === ' ') {
+                     event.preventDefault();
+                     question.click();
+                 }
+             });
+         });
+
+         window.addEventListener('resize', () => {
+              const activeItem = document.querySelector('.faq-item.active');
+              if (activeItem) {
+                  const answer = activeItem.querySelector('.faq-answer');
+                 answer.style.maxHeight = maxAnswerHeight;
+              }
+           });
+
+
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 if (this.getAttribute('href').startsWith('#') && this.getAttribute('href').length > 1) {
+                     const targetElement = document.querySelector(this.getAttribute('href'));
+                     if (targetElement) {
+                          e.preventDefault();
+                          const headerOffset = document.querySelector('header').offsetHeight + 20;
+                          const elementPosition = targetElement.getBoundingClientRect().top;
+                          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                          window.scrollTo({
+                              top: offsetPosition,
+                              behavior: "smooth"
+                          });
+                     }
+                 }
+             });
+         });
+
+         function playVideo() {
+             var video = document.getElementById('video');
+             var thumbnail = document.querySelector('.thumbnail');
+             if (thumbnail && video) {
+                 thumbnail.style.display = 'none';
+                 video.style.display = 'block';
+                 video.play().catch(error => {
+                     console.error("Erro ao tentar tocar o vídeo automaticamente:", error);
+                 });
+             }
+         }
+
+         var swiper = new Swiper('.equipe-swiper', {
+             effect: 'coverflow',
+             grabCursor: true,
+             centeredSlides: true,
+             slidesPerView: 'auto',
+             loop: true,
+             coverflowEffect: {
+                 rotate: 45,
+                 stretch: 0,
+                 depth: 120,
+                 modifier: 1,
+                 slideShadows: true,
+             },
+             pagination: {
+                 el: '.swiper-pagination',
+                 clickable: true,
+             },
+             navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+             },
+             breakpoints: {
+                 768: {
+                   slidesPerView: 2,
+                   spaceBetween: 20
+                 },
+                 992: {
+                   slidesPerView: 3,
+                   spaceBetween: 30
+                 }
+             }
+         });
+
+         var swiperEquipe = new Swiper('.equipe-swiper', {
+             effect: 'coverflow',
+             grabCursor: true,
+             centeredSlides: true,
+             slidesPerView: 'auto',
+             loop: true,
+             coverflowEffect: {
+                 rotate: 45,
+                 stretch: 0,
+                 depth: 120,
+                 modifier: 1,
+                 slideShadows: true,
+             },
+             pagination: {
+                 el: '#equipe .swiper-pagination',
+                 clickable: true,
+             },
+             navigation: {
+                 nextEl: '#equipe .swiper-button-next',
+                 prevEl: '#equipe .swiper-button-prev',
+             },
+             breakpoints: {
+             }
+         });
+
+         var swiperFuncionalidades = new Swiper('.funcionalidades-swiper', {
+             effect: 'slide',
+             grabCursor: true,
+             slidesPerView: 1,
+             spaceBetween: 30,
+             loop: false,
+             navigation: {
+                 nextEl: '#funcionalidades .funcionalidades-button-next',
+                 prevEl: '#funcionalidades .funcionalidades-button-prev',
+             },
+             pagination: {
+                 el: '#funcionalidades .funcionalidades-pagination',
+                 clickable: true,
+             },
+             breakpoints: {
+                 640: { slidesPerView: 2, spaceBetween: 20 },
+                 768: { slidesPerView: 2, spaceBetween: 30 },
+                 1024: { slidesPerView: 3, spaceBetween: 40 },
+             }
+         });
+
+         const lightbox = new PhotoSwipeLightbox({
+             gallery: '#galeria-funcionalidades',
+             children: '.swiper-slide a',
+             pswpModule: PhotoSwipe
+         });
+         lightbox.init();
+
+     </script>
+</body>
+</html>
